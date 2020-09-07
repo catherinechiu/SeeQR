@@ -27,7 +27,7 @@ class Query extends Component<QueryProps, state> {
     this.handleQuerySubmit = this.handleQuerySubmit.bind(this);
     this.updateCode = this.updateCode.bind(this);
     // this.handleQueryPrevious = this.handleQueryPrevious.bind(this);
-    // this.handleGenerateData = this.handleGenerateData.bind(this);
+    this.handleGenerateData = this.handleGenerateData.bind(this);
   }
 
   state: state = {
@@ -65,9 +65,11 @@ class Query extends Component<QueryProps, state> {
     }
   }
 
-  // handleGenerateData(event: any) {
-  //   ipcRenderer.send('generate-data')
-  // }
+  handleGenerateData(event: any) {
+    // ipcRenderer.send('generate-data')
+    console.log('inside handleGenerateData in Query component!');
+
+  }
 
   render() {
     // Codemirror module configuration options
@@ -103,7 +105,8 @@ class Query extends Component<QueryProps, state> {
           <br />
           <p>*required</p>
         </form>
-        {/* <button id="generate-data-button" onClick={this.handleGenerateData}>Generate Dummy Data</button> */}
+        <br />
+        <button id="generate-data-button" onClick={this.handleGenerateData}>Generate Dummy Data</button>
       </div>
     );
   }
